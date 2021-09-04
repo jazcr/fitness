@@ -1,16 +1,26 @@
-const mongoose = require("mongoose");
 const express = require("express");
+const mongoose = require("mongoose");
 
-const PORT = process.env.port || 3004;
-
-//added options to silence depracation warnings
-mongoose.connect("mongodb://localhost:27017/fitnessDb", { useNewUrlParser: true, useUnifiedTopology: true,
-useCreateIndex: true})
-    .then(() => console.log("Connected to db!"))
-    .catch(e => console.log(e));
+const PORT = process.env.PORT || 3004;
 
 const app = express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
-app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}/`));
+mongoose.set('debug', true);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/fitnessDb', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+});
+
+// app.use(api);
+// app.use(home);
+
+
+app.listen(PORT, () => {
+    console.log(`Listening on http://localhost:${PORT}`);
+});
