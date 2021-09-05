@@ -1,4 +1,7 @@
-const { model, Schema } = require('mongoose');
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+  
 
 const workoutSchema = new Schema(
     {
@@ -43,13 +46,19 @@ const workoutSchema = new Schema(
                     type: Number,
                     min: 1,
                 },
-            }
+            },
 
         ],
+    },
+    {
+        //converting input to json
+        toJSON: {
+            virtuals: true
+        }
     });
 
 
-// const Workout = mongoose.model('Workouts', workoutSchema);
+const Workout = mongoose.model('Workouts', workoutSchema);
 
-module.exports = model('Workout', workoutSchema);
+module.exports = Workout;
 
