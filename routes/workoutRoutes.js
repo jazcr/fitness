@@ -8,6 +8,7 @@ router.post('/api/workouts', async (req, res) => {
         //adding/saving workout
         const addWorkout = await Workout.create(req.body);
         addWorkout.save();
+        res.status(200).json(addWorkout);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -51,6 +52,25 @@ router.get('/api/workouts', async (req, res) => {
     }
 });
 
+//getting a range of workouts for graphs page
+router.get('/api/workouts/range', async (req, res) => {
+    try {
+        const combinedWorkouts = await Workout.aggregate([
+            {
+                //adding all excercise times together
+                $addFields: {
+                    totalDuration: {
+                        $sum: "$exercises.duration"
+                    }
+                }
+            }
+            //putting limit of 7 workouts to be aggregated
+        ]).sort({ day: -1 }).limit(7);
+        res.status(200).json(combinedWorkouts);
+    } catch (e) {
+        res.status(500).json(e);
+    }
+});
 
 
 module.exports = router;
