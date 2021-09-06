@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3004;
 
 
 mongoose.set('debug', true);
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/fitnessDb', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workoutDb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
