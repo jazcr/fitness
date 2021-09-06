@@ -55,7 +55,7 @@ Other than referencing other GitHub pages, I was sole contributor to this projec
 ## ❓ Questions:
 
 Got questions? Feel free to reach out to me!<br>
-Github: [https://www.linkedin.com/in/jasmine-rudolph-03072920b/](https://www.linkedin.com/in/jasmine-rudolph-03072920b/)<br>
+Linkedin: [https://www.linkedin.com/in/jasmine-rudolph-03072920b/](https://www.linkedin.com/in/jasmine-rudolph-03072920b/)<br>
 Email: [jazcrudolph@gmail.com](jazcrudolph@gmail.com)
 
 
