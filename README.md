@@ -3,12 +3,10 @@
 
 [![License](https://img.shields.io/badge/License-MIT%20-blue.svg)](https://opensource.org/licenses/MIT)
 
-![Screenshot of Homepage]() 
 <br>
+
+![Screenshot of Homepage](https://github.com/jazcr/fitness/blob/2324e9e81071e99fd6ddd606e8473f0698f8a439/public/img/homepage.JPG) 
 <br>
-<br>
-<br>
-![Screenshot of Dashboard]() 
 
 <br>  
 <br> 
